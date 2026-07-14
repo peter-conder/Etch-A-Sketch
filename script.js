@@ -1,8 +1,7 @@
 /**
  * So I have the basic thing done now.
- * what needs to happen now is I need to have the 'drawing canvas' function activate whenever you choose a new canvas size.
- * the drawCanvas function also needs to run once when the page is loaded with a size of 16x16, but be redrawn every time the button is clicked.
- * finally, with large numbers, the divs don't quite line up on the x axis. This needs to be fixed,
+ * finally, with large numbers, the divs don't quite line up on the x axis. This needs to be fixed.
+ * Perfect! can now set number and webpage will draw a new canvas with the correct number of pixels. However, I can't draw with the new pixels. I can hover though, so maybe it's strictly a problem with the mouseenter function.
  */
 
 
@@ -14,6 +13,17 @@ function sizePrompt() {
     if (sizeInt > 100) {
         alert("too large! select smaller number!");
     }
+    let removeContainer = document.querySelector('.containerDiv');
+    removeContainer.remove();
+    drawCanvas(sizeString);
+    const squares = document.querySelectorAll('.columnDiv');
+    squares.forEach((square) => {
+    square.addEventListener("mouseenter", () => {
+    square.classList.add('hovered');
+    });
+});
+
+
 };
 
 //draws canvas
@@ -48,5 +58,5 @@ squares.forEach((square) => {
         square.classList.add('hovered');
     });
 });
-columnDiv.classList.add("hovered");
+//columnDiv.classList.add("hovered");
 
