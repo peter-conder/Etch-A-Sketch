@@ -1,21 +1,22 @@
-/**
- * So I have the basic thing done now.
- * finally, with large numbers, the divs don't quite line up on the x axis. This needs to be fixed.
- * Perfect! can now set number and webpage will draw a new canvas with the correct number of pixels. However, I can't draw with the new pixels. I can hover though, so maybe it's strictly a problem with the mouseenter function.
- */
-
-
 let sizeInt = 16;
-
 function sizePrompt() {
     let sizeString = prompt("How big do you want the canvas to be?")
-    sizeInt = parseInt(sizeString);
-    if (sizeInt > 100) {
+    //sizeInt = parseInt(sizeString);
+    //sizeInt = Number(Sizestring);
+     if (isNaN(sizeString) === true) {
+        alert("bruh");
+        return;
+     }
+
+    if (sizeString > 100) {
         alert("too large! select smaller number!");
-    }
+        return; }
+    
     let removeContainer = document.querySelector('.containerDiv');
     removeContainer.remove();
+    
     drawCanvas(sizeString);
+    
     const squares = document.querySelectorAll('.columnDiv');
     squares.forEach((square) => {
     square.addEventListener("mouseenter", () => {
