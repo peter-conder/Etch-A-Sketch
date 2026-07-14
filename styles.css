@@ -5,10 +5,17 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-.heading {
+.header {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    width: 60vw;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.sizeButton {
+    height: 70%;
+    align-self: center;
 }
 
 .containerDiv {
@@ -28,7 +35,7 @@ body {
     flex: 1;
     align-items: center;
     flex-direction: column;
-    width: 6%;
+    /*width: 6%; */
     height: auto;
 }
 
